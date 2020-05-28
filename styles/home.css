@@ -1,0 +1,204 @@
+body {
+  background-color: #e9ebee;
+}
+
+#userText {
+  width: 100px;
+
+  overflow: hidden;
+
+  text-overflow: ellipsis;
+
+  font-size: 20px;
+  color: #fff;
+}
+
+.dropbtn {
+  background-color: #5f018e;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  width: 140px;
+  margin-left: 10px;
+  border-radius: 5px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover .dropbtn {
+  background-color: #5f018e;
+}
+
+a {
+  cursor: pointer;
+}
+
+main {
+  margin-top: 40px;
+}
+
+.post {
+  width: 50%;
+  margin: 0 auto;
+  margin-bottom: 10px;
+  background-color: #fff;
+  overflow: hidden;
+  border-radius: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.post header {
+  padding: 5px 10px;
+  background-color: #f1f1f1;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+input[name="file"] {
+  display: none;
+}
+
+label {
+  max-height: 30px;
+  max-width: 30px;
+  min-height: 30px;
+  min-width: 30px;
+
+  margin-right: 10px;
+
+  border-radius: 100px;
+
+  cursor: pointer;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+label:active {
+  background-color: #a0a0a0;
+  transition: 0.5s;
+}
+
+label:active svg {
+  fill: #fff;
+  transition: 0.5s;
+}
+
+.post main {
+  margin: 0;
+
+  padding: 20px 10px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.post main textarea {
+  width: 90%;
+  border: none;
+  resize: none;
+  padding: 10px;
+  margin: 0 10px;
+
+  font-size: 16px;
+}
+
+.post button {
+  max-height: 45px;
+  max-width: 45px;
+  min-height: 45px;
+  min-width: 45px;
+
+  border: none;
+  border-radius: 100%;
+  background-color: #0177f0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+svg {
+  fill: #a0a0a0;
+}
+
+.post button svg {
+  fill: #f1f1f1;
+}
+
+.avatar {
+  vertical-align: middle;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-left: 10px;
+}
+
+.created {
+  margin-top: 20px;
+}
+
+.created .title {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+  padding: 10px;
+
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+.created .title p {
+  font-size: 22px;
+  font-weight: bold;
+
+  margin-left: 20px;
+
+  color: #0177f0;
+}
+
+.created .message {
+  padding: 20px;
+}
+
+.imgDiv {
+  margin-top: 15px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.imgDiv img {
+  max-height: 200px;
+
+  border-radius: 10px;
+}

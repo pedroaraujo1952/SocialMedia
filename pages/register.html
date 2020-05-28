@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register in Social Media</title>
+
+    <script src="../js/register.js"></script>
+  </head>
+  <body>
+    <header>
+      <div class="navbar">
+        <nav>
+          <div class="logo">
+            <img src="../assets/logo.png" alt="" height="40" width="40" />
+            <h1>Welcome to Social Media</h1>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <div class="register">
+        <h1>Register</h1>
+        <form action="../index.html" onsubmit="registerSubmit(event)">
+          <h2>Username</h2>
+          <div>
+            <input type="text" id="loginField" />
+            <p id="erroUsername" class="error"></p>
+          </div>
+
+          <h2>Password</h2>
+          <div>
+            <input type="password" id="pswdField" />
+            <p id="erroPswd" class="error"></p>
+          </div>
+
+          <div class="button">
+            <button type="submit">
+              Login
+            </button>
+          </div>
+        </form>
+      </div>
+    </main>
+  </body>
+  <link rel="stylesheet" href="../styles/navbar.css" />
+  <link rel="stylesheet" href="../styles/style.css" />
+  <link rel="stylesheet" href="../styles/register.css" />
+</html>

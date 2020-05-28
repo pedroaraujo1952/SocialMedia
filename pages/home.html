@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Social Media</title>
+
+    <script src="../js/home.js"></script>
+
+    <!-- Turn route to restrict route -->
+    <script>
+      var token = localStorage.getItem("token");
+      if (!token) location.href = "../index.html";
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <div class="navbar">
+        <nav>
+          <div class="logo">
+            <img src="../assets/logo.png" alt="" height="40" width="40" />
+            <h1>Post a lot in Social Media</h1>
+          </div>
+
+          <div class="dropdown">
+            <button class="dropbtn" id="userText"></button>
+            <div class="dropdown-content">
+              <a onclick="logoutApp()">Logout</a>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="submitPost">
+        <div class="post">
+          <form onsubmit="postAny(event)">
+            <header>Create Post</header>
+            <div id="imageDiv" class="imgDiv"></div>
+            <main>
+              <img src="../assets/avatar.png" alt="Avatar" class="avatar" />
+              <textarea
+                placeholder="What's on your mind?"
+                name="post"
+              ></textarea>
+
+              <label for="fileInput">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  width="18"
+                >
+                  <path
+                    d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"
+                  />
+                  <path d="M0 0h24v24H0z" fill="none" />
+                </svg>
+              </label>
+
+              <input type="file" name="file" id="fileInput" accept="image/*" />
+
+              <button type="submit">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  width="24"
+                >
+                  <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z" />
+                  <path d="M0 0h24v24H0z" fill="none" />
+                </svg>
+              </button>
+            </main>
+          </form>
+        </div>
+      </section>
+
+      <section class="posts" id="postSection"></section>
+    </main>
+  </body>
+
+  <!-- Set username in the NavBar button -->
+  <script text="text/javascript">
+    var username = localStorage.getItem("token");
+    var userText = document.createTextNode(username);
+    var userField = document.getElementById("userText");
+
+    userField.appendChild(userText);
+  </script>
+
+  <!-- Update message sender with image -->
+  <script text="text/javascript">
+    var inputFile = document.getElementById("fileInput");
+    var imgDiv = document.getElementById("imageDiv");
+    var IMG = document.createElement("IMG");
+
+    var fileReader = new FileReader();
+
+    inputFile.addEventListener("change", (ev) => {
+      var img = ev.target.files[0];
+
+      fileReader.readAsDataURL(img);
+      fileReader.onloadend = () => {
+        IMG.setAttribute("src", fileReader.result);
+        imgDiv.appendChild(IMG);
+        setFile(fileReader.result);
+      };
+    });
+  </script>
+
+  <!-- Get all posts in localStorage -->
+  <script text="text/javascript">
+    var array = getPostArray();
+    if (array.length > 0) {
+      array = array.split(",{");
+      array = array.reverse();
+
+      array.forEach((element) => {
+        if (element[0] !== "{") {
+          element = "{" + element;
+        }
+        let data = JSON.parse(element);
+
+        generatePost(data.user, data.message, data.img);
+      });
+    }
+  </script>
+
+  <link rel="stylesheet" href="../styles/navbar.css" />
+  <link rel="stylesheet" href="../styles/home.css" />
+  <link rel="stylesheet" href="../styles/style.css" />
+</html>

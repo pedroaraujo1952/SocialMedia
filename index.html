@@ -1,0 +1,69 @@
+<!-- 
+                              !Made by PH
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" type="image/png" href="./assets/logo.png" />
+
+    <title>Welcome to Social Media</title>
+
+    <!-- JavaScript imports -->
+    <script src="./js/main.js"></script>
+    <script src="./js/login.js"></script>
+  </head>
+  <body>
+    <!-- Navigation Bar on top -->
+    <header>
+      <div class="navbar">
+        <nav>
+          <div class="logo">
+            <img src="./assets/logo.png" alt="" height="40" width="40" />
+            <h1>Welcome to Social Media</h1>
+          </div>
+
+          <div>
+            <button onclick="goToLogin(event)">Login</button>
+            <button onclick="goToRegister()">Register</button>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Content of the page -->
+    <main>
+      <div class="main">
+        <img src="./assets/login.png" alt="" height="400" width="400" />
+        <div class="login">
+          <form name="form" onsubmit="loginSubmit(event)">
+            <h2>Login</h2>
+            <div id="loginDiv">
+              <input type="text" id="loginField" />
+              <p id="erroUsername" class="error"></p>
+            </div>
+
+            <h2>Password</h2>
+            <div id="passwordDiv">
+              <input type="password" id="pswdField" />
+              <p id="erroPswd" class="error"></p>
+            </div>
+
+            <div class="button">
+              <button type="submit">
+                Login
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </main>
+  </body>
+
+  <!-- CSS import -->
+  <link rel="stylesheet" href="./styles/navbar.css" />
+  <link rel="stylesheet" href="./styles/main.css" />
+  <link rel="stylesheet" href="./styles/style.css" />
+</html>
